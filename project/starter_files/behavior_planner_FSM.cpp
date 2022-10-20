@@ -79,8 +79,7 @@ double BehaviorPlannerFSM::get_look_ahead_distance(const State& ego_state) {
   // using a comfortable deceleration.
 //   auto look_ahead_distance = 1.0;  // <- Fix This
   
-  VelocityProfileGenerator vpg;
-  auto look_ahead_distance = vpg.calc_distance(velocity_mag, 0.0, -_max_accel);
+  auto look_ahead_distance = (velocity_mag * velocity_mag)/2 *_max_accel; 
 
   // LOG(INFO) << "Calculated look_ahead_distance: " << look_ahead_distance;
 
