@@ -85,6 +85,7 @@ std::vector<State> MotionPlanner::generate_offset_goals(
   // TODO-Perpendicular direction: ADD pi/2 to the goal yaw
   // (goal_state.rotation.yaw)
   //auto yaw = ;  // <- Fix This
+  auto yaw_plus_90 = goal_state.rotation.yaw + M_PI/2;
 
   // LOG(INFO) << "MAIN GOAL";
   // LOG(INFO) << "x: " << goal_state.location.x << " y: " <<
@@ -115,6 +116,8 @@ std::vector<State> MotionPlanner::generate_offset_goals(
     //          << " y: " << goal_offset.location.y
     //          << " z: " << goal_offset.location.z
     //          << " yaw (rad): " << goal_offset.rotation.yaw;
+    goal_offset.location.x += offset * cos(yaw_plus_90); 
+    goal_offset.location.y += offset * sin(yaw_plus_90); 
 
     if (valid_goal(goal_state, goal_offset)) {
       goals_offset.push_back(goal_offset);
