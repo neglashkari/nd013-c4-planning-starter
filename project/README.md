@@ -33,5 +33,20 @@ cd MotionPlanning_-_DecisionMaking_AV/project
 ```
 
 ### Obtained Results
+
 In `planning_params.h`, the parameters were set as below:
-- 
+- Number of paths (goals) = 7, i.e., `P_NUM_PATHS`
+- Number of points in the spiral = 20, i.e., `P_NUM_POINTS_IN_SPIRAL`
+
+The obtained results are shown below which clearly demonstrates collision detection and collision avoidance is successfully performed, and that the ego car steers away from the imminent collisions.
+
+![carla_1](https://user-images.githubusercontent.com/109758200/197116241-719527a8-3796-441a-bf69-843c5b72d79e.png)
+
+![carla_2](https://user-images.githubusercontent.com/109758200/197116258-2a4c8fbc-f020-4665-8ed4-21955cb24ef1.png)
+
+![carla_3](https://user-images.githubusercontent.com/109758200/197116271-244f113b-4b1f-4f2e-8a31-b428b8f2960d.png)
+
+![carla_4](https://user-images.githubusercontent.com/109758200/197116283-ff58e77f-ef90-4198-94f3-8a490369df99.png)
+
+
+
